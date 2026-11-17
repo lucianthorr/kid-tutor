@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puzzles: finish the grid · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+<style>
+  .layout { flex: 1; display: flex; align-items: center; justify-content: center; gap: calc(80 * var(--pt)); }
+  .grid { display: grid; grid-template-columns: repeat(3, auto); gap: calc(14 * var(--pt)); padding: calc(20 * var(--pt)); background: var(--color-surface); border-radius: calc(var(--radius-card) * var(--pt)); }
+  .grid .slot { --slot: 165; }
+  .grid .shape { --size: 100; }
+  .tray { display: grid; grid-template-columns: repeat(2, auto); gap: calc(28 * var(--pt)); }
+  .tray .slot { --slot: 170; }
+  .tray .shape { --size: 100; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Puzzles: finish the grid</h1>
+    <nav><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen">
+        <div class="topbar">
+          <a class="btn icon" href="#" aria-label="Say it again">🔊</a>
+          <div class="progress" aria-label="Puzzle 4 of 6">
+            <span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span>
+            <span></span><span></span>
+          </div>
+          <a class="btn" href="#" aria-label="Help">💡 Help</a>
+        </div>
+        <p class="prompt">Which one fills the gap?</p>
+        <div class="layout">
+          <div class="grid" aria-label="Rows: red, blue, yellow circles; red, blue, yellow squares; red, blue triangles, then a blank">
+            <div class="slot"><span class="shape circle red"></span></div>
+            <div class="slot"><span class="shape circle blue"></span></div>
+            <div class="slot"><span class="shape circle yellow"></span></div>
+            <div class="slot"><span class="shape square red"></span></div>
+            <div class="slot"><span class="shape square blue"></span></div>
+            <div class="slot"><span class="shape square yellow"></span></div>
+            <div class="slot"><span class="shape triangle red"></span></div>
+            <div class="slot"><span class="shape triangle blue"></span></div>
+            <div class="slot blank">?</div>
+          </div>
+          <div class="tray">
+            <a class="slot" href="#" aria-label="blue triangle"><span class="shape triangle blue"></span></a>
+            <a class="slot" href="#" aria-label="yellow square"><span class="shape square yellow"></span></a>
+            <a class="slot" href="#" aria-label="yellow triangle"><span class="shape triangle yellow"></span></a>
+            <a class="slot" href="#" aria-label="red star"><span class="shape star red"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="puzzle-odd.html">← Odd one out</a><a href="puzzle-who.html">Next: Who am I? →</a></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note says"><h2>Says</h2>
+      <p>On appear: “Look at each row. Which one fills the gap?”</p>
+      <p>Tap a choice: that's the answer. There is no Check button: every puzzle has one answer, so the right or wrong reply comes straight away, and it names the tile.</p>
+      <p>Right: “Yes! This row is all triangles, and this column is all yellow. A yellow triangle!”</p>
+      <p>Wrong: “That's a triangle, good! But look down this column: what color are they?” (says what was right, then points at what was missed.)</p>
+      <p>Help, first press: the gap’s row glows. “This row is all triangles.” Second press: its column glows. “This column is all yellow.” Each press takes away a wrong choice.</p>
+    </div>
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>The puzzle on the left, choices on the right. Tapping a choice answers; no Check button.</li>
+        <li>The wrong choices are each right in one way and wrong in another (blue triangle: right shape, wrong color; yellow square: right color, wrong shape), plus one that's wrong in every way. A wrong answer tells the app which rule the child missed, and that goes in the log.</li>
+        <li><b>Levels:</b> 2×2 where the bottom row repeats the top → 2×2 with a shape per row and a color per column → 3×3 (shown) → 3×3 where the count grows along each row (1, 2, 3) → the gap anywhere.</li>
+        <li><b>A wrong pick shows why:</b> the line it doesn't fit (the gap's row or column) lights up in orange, as the app says to look there.</li>
+        <li>The hardest kind: it joins sessions once “what comes next?” reaches level 3.</li>
+      </ul>
+    </div>
+      </aside>
+</div>
+</body>
+</html>

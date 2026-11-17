@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spelling · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Spelling (scaffold level 2)</h1>
+    <nav><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen">
+        <div class="topbar">
+          <a class="btn icon" href="#" aria-label="Say it again">🔊</a>
+          <div class="progress" aria-label="Question 3 of 8">
+            <span class="done"></span><span class="done"></span><span class="now"></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <a class="btn" href="#" aria-label="Help">💡 Help</a>
+        </div>
+        <div class="center">
+          <div class="letters" aria-label="f r blank blank n d">
+            <div class="cell given">f</div>
+            <div class="cell given">r</div>
+            <div class="cell blank written">i</div>
+            <div class="cell blank"></div>
+            <div class="cell given">n</div>
+            <div class="cell given">d</div>
+          </div>
+          <span class="subtle">Write the missing letters in the yellow boxes</span>
+        </div>
+        <div class="row" style="justify-content: flex-end">
+          <a class="btn primary" href="vocab.html">✓ Check</a>
+        </div>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="child-home.html">← Home</a><a href="vocab.html">Next: Vocab →</a></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note says"><h2>Says</h2><p>“Spell <b>friend</b>. My friend came over to play. Friend.”</p></div>
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>The word is only spoken, never printed: printing it would give the answer away.</li>
+        <li>Each yellow box is its own handwriting box; the app reads it after the pencil pauses.</li>
+        <li>Check also happens automatically when every blank is filled.</li>
+        <li>Wrong letter: the box turns red and clears, “Almost! Try that letter again.” Second miss: the letter faded to trace.</li>
+        <li>Each word has its own level: level <i>n</i> means <i>n</i> random letters are missing. Two first tries in a row at a level move it up; a retry resets that count; needing a trace moves it down.</li>
+        <li>Top level (every letter missing): one wide box for the whole word, checked like Writing’s “look, cover, write”. Two first tries in a row there → mastered.</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Open questions</h2>
+      <ul>
+        <li>Left-handed child: move Help to the left?</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

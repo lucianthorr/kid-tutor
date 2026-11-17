@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Math · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+<style>
+  .fact { font-size: calc(110 * var(--pt)); font-weight: 700; display: flex; align-items: center; gap: calc(28 * var(--pt)); }
+  .dots { display: flex; gap: calc(36 * var(--pt)); }
+  .group { display: grid; grid-template-columns: repeat(5, calc(30 * var(--pt))); gap: calc(8 * var(--pt)); }
+  .dot { width: calc(30 * var(--pt)); height: calc(30 * var(--pt)); border-radius: 50%; background: var(--color-hint); }
+  .dot.b { background: #e8892b; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Math: number facts</h1>
+    <nav><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen">
+        <div class="topbar">
+          <a class="btn icon" href="#" aria-label="Say it again">🔊</a>
+          <div class="progress" aria-label="Question 3 of 8">
+            <span class="done"></span><span class="done"></span><span class="now"></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <a class="btn" href="#" aria-label="Help">💡 Help</a>
+        </div>
+        <div class="center">
+          <div class="fact">
+            <span>3 + 4 =</span>
+            <div class="letters"><div class="cell blank written">7</div></div>
+          </div>
+          <div class="dots" aria-label="Help: 3 blue dots and 4 orange dots">
+            <div class="group"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="group"><span class="dot b"></span><span class="dot b"></span><span class="dot b"></span><span class="dot b"></span></div>
+          </div>
+        </div>
+        <div class="row" style="justify-content: flex-end">
+          <a class="btn primary" href="celebration.html">✓ Check</a>
+        </div>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="child-home.html">← Home</a><a href="celebration.html">Next: Session done →</a></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note says"><h2>Says</h2>
+      <p>“What is 3 plus 4?” · correct: “Yes! 3 plus 4 is 7.”</p>
+    </div>
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>One handwriting box per digit of the answer (two boxes for 10–20).</li>
+        <li>Help, first press: counting dots (shown here). Second press, or a second miss: the answer faded to trace.</li>
+        <li>Wrong digit: box turns red and clears, “Almost! Try again.”</li>
+        <li>8 facts per session from the current skill, plus a couple of review facts from earlier skills.</li>
+        <li>Skills in order: add within 5, add within 10, subtract within 10, add within 20, subtract within 20. The next unlocks when 80% of the current one is mastered.</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Open questions</h2>
+      <ul>
+        <li>Is the number of answer boxes too big a clue?</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

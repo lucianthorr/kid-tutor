@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claw machine · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+<style>
+  .tokens { font-size: calc(var(--text-title) * var(--pt)); font-weight: 700; padding: 0 calc(20 * var(--pt)); border-radius: 999px; background: #fff8de; border: calc(3 * var(--pt)) solid var(--color-accent); min-height: calc(84 * var(--pt)); display: flex; align-items: center; }
+  .machine { flex: 1; position: relative; border: calc(6 * var(--pt)) solid #c0392b; border-radius: calc(24 * var(--pt)); background: linear-gradient(#e8f4fb, #cfe6f3); overflow: hidden; }
+  .rail { position: absolute; top: calc(30 * var(--pt)); left: 4%; right: 4%; height: calc(10 * var(--pt)); background: #888; border-radius: 999px; }
+  .claw { position: absolute; top: calc(30 * var(--pt)); left: 55%; width: calc(90 * var(--pt)); text-align: center; transform: translateX(-50%); }
+  .cable { width: calc(6 * var(--pt)); height: calc(240 * var(--pt)); background: #666; margin: 0 auto; }
+  .head { font-size: calc(70 * var(--pt)); line-height: 1; }
+  .floor { position: absolute; bottom: 0; left: 0; right: 0; height: calc(150 * var(--pt)); display: flex; align-items: flex-end; justify-content: flex-end; gap: calc(28 * var(--pt)); padding: 0 calc(40 * var(--pt)) calc(20 * var(--pt)); }
+  .plush { font-size: calc(96 * var(--pt)); line-height: 1; }
+  .chest { position: absolute; left: calc(30 * var(--pt)); bottom: 0; width: calc(200 * var(--pt)); height: calc(120 * var(--pt)); background: #9e6133; border: calc(4 * var(--pt)) solid #6b3d1f; border-radius: calc(10 * var(--pt)); color: #f5c238; display: flex; align-items: center; justify-content: center; font-size: calc(26 * var(--pt)); font-weight: 700; }
+  .chest::before { content: ""; position: absolute; left: 4%; right: 4%; bottom: 100%; height: calc(100 * var(--pt)); background: #9e6133; border: calc(4 * var(--pt)) solid #6b3d1f; border-radius: 40% 40% 0 0 / 30% 30% 0 0; }
+  .wall { position: absolute; left: calc(260 * var(--pt)); bottom: 0; width: calc(14 * var(--pt)); height: calc(330 * var(--pt)); background: rgb(255 255 255 / 0.6); border: calc(3 * var(--pt)) solid #8cadc7; border-radius: 999px; }
+  .floor { flex-wrap: wrap-reverse; align-content: flex-start; height: calc(330 * var(--pt)); padding-left: calc(300 * var(--pt)); gap: 0; }
+  .floor .plush:nth-child(3n) { transform: translateY(calc(-30 * var(--pt))); }
+  .floor .plush:nth-child(4n+1) { transform: translate(calc(20 * var(--pt)), calc(15 * var(--pt))); }
+  .controls { display: flex; justify-content: center; align-items: center; gap: calc(48 * var(--pt)); }
+  .arrow { width: calc(140 * var(--pt)); height: calc(110 * var(--pt)); font-size: calc(56 * var(--pt)); border-radius: calc(24 * var(--pt)); }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Rewards: the claw machine</h1>
+    <nav><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen">
+        <div class="topbar">
+          <a class="btn icon" href="child-home.html" aria-label="Home">🏠</a>
+          <a class="btn icon" href="#" aria-label="Say it again">🔊</a>
+          <span class="tokens">🪙 × 3</span>
+          <span style="flex: 1"></span>
+          <a class="btn icon" href="toy-chest.html" aria-label="Toy chest">🧸</a>
+        </div>
+        <div class="machine">
+          <div class="rail"></div>
+          <div class="claw"><div class="cable"></div><div class="head">🪝</div></div>
+          <div class="chest">treasure chest</div>
+          <div class="wall"></div>
+          <div class="floor">
+            <span class="plush">🐻</span><span class="plush">🐰</span><span class="plush">🦊</span><span class="plush">🐸</span>
+            <span class="plush">🐼</span><span class="plush">🐧</span><span class="plush">🐱</span><span class="plush">🐶</span>
+            <span class="plush">🦄</span><span class="plush">🦁</span><span class="plush">🦉</span><span class="plush">🐙</span>
+            <span class="plush">🐨</span><span class="plush">🐷</span><span class="plush">🦕</span>
+          </div>
+        </div>
+        <div class="controls">
+          <a class="btn arrow" href="#" aria-label="Move left">◀</a>
+          <a class="btn primary big" href="#">Drop!</a>
+          <a class="btn arrow" href="#" aria-label="Move right">▶</a>
+        </div>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="child-home.html">← Home</a><a href="toy-chest.html">Toy chest →</a></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note says"><h2>Says</h2>
+      <p>On appear: “You have 3 tokens. Move the claw over a toy, then press Drop.”</p>
+      <p>No tokens: “You need a token to play. Finish some practice to earn one!”</p>
+      <p>Win: “You got the bunny! It's going in your toy chest.”</p>
+      <p>Slip: “Ooh, it slipped out! Try grabbing a toy right in the middle. The claw will grab better next time.”</p>
+      <p>Nothing under the claw: “Oops, nothing there. The claw will grab better next time.”</p>
+    </div>
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>Reached from a <b>Rewards</b> button at the bottom of Home.</li>
+        <li>Move the claw by dragging the claw itself (touches elsewhere in the machine do nothing), or by holding the big arrows. <b>Drop</b> is the one main action; it costs one token.</li>
+        <li>The claw lowers, closes and lifts. If it caught a toy it carries it over a low glass wall and drops it into the open treasure chest on the left; then the toy appears big in the middle of the screen.</li>
+        <li><b>A full machine:</b> 20 squishy toy balls in a messy pile: each tumbled in, rolled off what it landed on and came to rest against toys or the walls. They squash when they land and squeeze when the claw closes. When a toy is won, the ones leaning on it fall into the gap and a new one tumbles in.</li>
+        <li><b>Aim, not luck:</b> the claw lands on the highest toy under it. Grabbed near its middle, the toy holds; grabbed off-center, it rides up and squeezes out, sooner the further off the claw was. No hidden randomness, and no highlight: lining up is the skill.</li>
+        <li><b>Misses help:</b> each miss or slip makes the grip better, and the claw visibly opens wider. By the third try in a row, any drop onto the pile wins.</li>
+        <li>No duplicates: the machine shows toys not yet won, and refills once all of them have been won.</li>
+        <li>Tokens: 3 for every finished practice (grown-ups can change this). They never expire and are never taken away.</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Later</h2>
+      <ul>
+        <li>Special plushes for milestones, and real-world reward tickets.</li>
+        <li>Photos of the child's own stuffed animals as prizes.</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

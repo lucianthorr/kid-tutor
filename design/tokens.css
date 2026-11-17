@@ -1,0 +1,35 @@
+/* Design tokens: the single source for colors, type, spacing and shape.
+   Sizes are in iPad points via --pt (1pt on a 1376-pt-wide 13" iPad in landscape).
+   Theme.swift mirrors these values; change them together. */
+:root {
+  /* Color: wireframes stay mostly gray; the accent marks the one main action. */
+  --color-paper: #ffffff;
+  --color-surface: #f2f3f5;
+  --color-line: #c9ced6;
+  --color-ink: #1f242c;
+  --color-muted: #6b7280;
+  --color-accent: #f2b705;      /* pencil yellow: the main action */
+  --color-accent-ink: #3d2e00;
+  --color-success: #2e9e5b;
+  --color-hint: #3b82c4;
+  --color-guide-line: #8fb7e6;  /* ruled writing lines */
+  --color-guide-mid: #e8a0a0;   /* dashed midline */
+
+  /* Type (child screens use the large end) */
+  --font-ui: -apple-system, "SF Pro Rounded", "SF Pro Text", system-ui, sans-serif;
+  --font-child: "SF Pro Rounded", ui-rounded, -apple-system, system-ui, sans-serif;
+  --text-caption: 15;
+  --text-body: 20;
+  --text-title: 34;
+  --text-prompt: 56;
+  --text-letter: 120;
+
+  /* Spacing and shape (in points) */
+  --space-s: 8;
+  --space-m: 16;
+  --space-l: 32;
+  --space-xl: 48;
+  --radius-control: 20;
+  --radius-card: 28;
+  --target-min: 60;             /* smallest tappable size on child screens */
+}

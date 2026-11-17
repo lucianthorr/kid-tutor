@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parent dashboard · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Parent dashboard</h1>
+    <nav><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen grown-up">
+        <div class="topbar">
+          <strong style="font-size: calc(28 * var(--pt))">This week</strong>
+          <span class="subtle">Content · Rewards · Handwriting · Settings</span>
+          <a class="btn" href="child-home.html">Done</a>
+        </div>
+        <div class="cols">
+          <div class="panel">
+            <h3>Practice</h3>
+            <div class="stat">5 sessions</div>
+            <span class="subtle">72 minutes · Mon–Fri</span>
+          </div>
+          <div class="panel">
+            <h3>Accuracy</h3>
+            <div class="list-row"><span>Spelling</span><span>84%</span></div>
+            <div class="list-row"><span>Vocab</span><span>91%</span></div>
+            <div class="list-row"><span>Math facts</span><span>88%</span></div>
+          </div>
+          <div class="panel">
+            <h3>Coming up</h3>
+            <div class="stat">31 due</div>
+            <span class="subtle">tomorrow · 12 new waiting</span>
+          </div>
+        </div>
+        <div class="cols" style="grid-template-columns: 2fr 1fr">
+          <div class="panel">
+            <h3>Needs attention</h3>
+            <div class="list-row"><span>because</span><span class="pill">missed 4×</span></div>
+            <div class="list-row"><span>7 + 8</span><span class="pill">slow</span></div>
+            <div class="list-row"><span>b / d in handwriting</span><span class="pill">misread 6×</span></div>
+          </div>
+          <div class="panel">
+            <h3>Rewards</h3>
+            <div class="list-row"><span>Trip to the park</span><span>20/25</span></div>
+            <div class="list-row"><span>Pick dinner</span><span>given ✓</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="child-home.html">← Child home</a><span></span></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>Opened from home by long-pressing Grown-ups, then the parent PIN.</li>
+        <li>Summary first, then what needs attention; tapping an item opens it to edit, record audio, suspend or reset.</li>
+        <li>Normal iPad UI is fine here; it's not for the child.</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Open questions</h2>
+      <ul>
+        <li>Which of these would you actually check weekly?</li>
+        <li>Should handwriting review live here or in its own tab?</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

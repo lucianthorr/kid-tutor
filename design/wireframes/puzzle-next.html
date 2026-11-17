@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puzzles: what comes next · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+<style>
+  .sequence { display: flex; gap: calc(20 * var(--pt)); justify-content: center; }
+  .tray { display: flex; gap: calc(48 * var(--pt)); justify-content: center; padding: calc(28 * var(--pt)); background: var(--color-surface); border-radius: calc(var(--radius-card) * var(--pt)); }
+  .tray .slot { --slot: 190; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Puzzles: what comes next?</h1>
+    <nav><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen">
+        <div class="topbar">
+          <a class="btn icon" href="#" aria-label="Say it again">🔊</a>
+          <div class="progress" aria-label="Puzzle 2 of 6">
+            <span class="done"></span><span class="now"></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <a class="btn" href="#" aria-label="Help">💡 Help</a>
+        </div>
+        <p class="prompt">What comes next?</p>
+        <div class="center">
+          <div class="sequence" aria-label="red circle, blue square, red circle, blue square, red circle, then a blank">
+            <div class="slot"><span class="shape circle red"></span></div>
+            <div class="slot"><span class="shape square blue"></span></div>
+            <div class="slot"><span class="shape circle red"></span></div>
+            <div class="slot"><span class="shape square blue"></span></div>
+            <div class="slot"><span class="shape circle red"></span></div>
+            <div class="slot blank ghost"><span class="shape square blue"></span></div>
+          </div>
+          <div class="tray">
+            <a class="slot" href="#" aria-label="red circle"><span class="shape circle red"></span></a>
+            <a class="slot selected" href="#" aria-label="blue square"><span class="shape square blue"></span></a>
+            <a class="slot" href="#" aria-label="yellow triangle"><span class="shape triangle yellow"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="child-home.html">← Home</a><a href="puzzle-odd.html">Next: Odd one out →</a></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note says"><h2>Says</h2>
+      <p>On appear: “What comes next? Red circle, blue square, red circle, blue square, red circle… Tap the one that comes next.”</p>
+      <p>Tap a choice: that's the answer. There is no Check button: every puzzle has one answer, so the right or wrong reply comes straight away, and it names the tile.</p>
+      <p>Right: “Yes! Red, blue, red, blue, red… blue!” (the rule, said back.)</p>
+      <p>Wrong: “Not quite. Listen: red, blue, red, blue, red…” and that choice fades.</p>
+      <p>Help: “Look at the ones that are the same. What comes after a red circle?”</p>
+    </div>
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>Tapping a choice answers: right fills the yellow gap, wrong fades the choice. No Check button.</li>
+        <li>Three choices at first, four later. One is always the right answer. The others are tiles from the pattern in the wrong place, plus one that doesn't belong at all.</li>
+        <li><b>Levels:</b> AB (shown) → AAB → ABC → two things change at once (shape and color on separate beats) → growing rows (●, ●●, ●●●). Up a level after 3 first-try answers in a row, down one after 2 misses in a row.</li>
+        <li><b>Help:</b> says a hint and removes one wrong choice. A second press removes another, leaving only the right one.</li>
+        <li>A wrong answer never ends the puzzle: the choice fades and the child tries again, so every puzzle ends on a success.</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Open questions</h2>
+      <ul>
+        <li>Should each tile also say its name as the row is read, with a little bounce, so the rhythm is easier to hear?</li>
+        <li>Animals or toys instead of shapes for the easiest level?</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

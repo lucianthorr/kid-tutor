@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Child home · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+<style>
+  .subjects { display: grid; grid-template-columns: repeat(3, 1fr); gap: calc(28 * var(--pt)); flex: 1; }
+  .subject {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: calc(12 * var(--pt));
+    border: calc(3 * var(--pt)) solid var(--color-line); border-radius: calc(var(--radius-card) * var(--pt));
+    background: var(--color-paper); color: var(--color-ink); text-decoration: none;
+  }
+  .subject .art { font-size: calc(96 * var(--pt)); line-height: 1; }
+  .subject .name { font-size: calc(var(--text-title) * 1.2 * var(--pt)); font-weight: 700; }
+  .subject .what { font-size: calc(var(--text-body) * var(--pt)); color: var(--color-muted); }
+  .subject.all { border-color: var(--color-accent); background: #fff8de; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Child home</h1>
+    <nav><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen">
+        <div class="topbar">
+          <a class="btn icon" href="#" aria-label="Say it again">🔊</a>
+          <p class="prompt" style="font-size: calc(44 * var(--pt))">What do you want to practice?</p>
+          <a class="btn icon" href="parent-dashboard.html" aria-label="Grown-ups: press and hold">⚙️</a>
+        </div>
+        <div class="subjects">
+          <a class="subject" href="#"><span class="art">📖</span><span class="name">Reading</span><span class="what">read it out loud</span></a>
+          <a class="subject" href="#"><span class="art">✏️</span><span class="name">Writing</span><span class="what">letters and words</span></a>
+          <a class="subject" href="spelling.html"><span class="art">🔤</span><span class="name">Spelling</span><span class="what">fill in the letters</span></a>
+          <a class="subject" href="#"><span class="art">➕</span><span class="name">Math</span><span class="what">number facts</span></a>
+          <a class="subject" href="puzzle-next.html"><span class="art">🧩</span><span class="name">Puzzles</span><span class="what">pick the answer</span></a>
+          <a class="subject all" href="spelling.html"><span class="art">🔀</span><span class="name">A bit of everything</span><span class="what">surprise mix</span></a>
+        </div>
+        <div class="row">
+          <a class="btn primary big" href="rewards.html">🧸 Rewards · 🪙 3</a>
+        </div>
+      </div>
+    </div>
+    <div class="flow-nav"><span></span><a href="spelling.html">Next: Spelling →</a></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note says"><h2>Says</h2>
+      <p>On appear: “What do you want to practice? Reading, writing, spelling, math, puzzles, or a bit of everything.”</p>
+      <p>On a tile: its name (“Math!”) as the session starts.</p>
+    </div>
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>Six big tiles (about 400 × 290 pt), picture first, name second, so a non-reader can pick by picture.</li>
+        <li><b>Reading</b>: the child reads aloud; on-device speech-to-text approves it, a grown-up can override.</li>
+        <li><b>Writing</b>: letters, then whole words, in handwriting boxes.</li>
+        <li><b>Spelling</b>: blanks in a word, growing until the whole word is written.</li>
+        <li><b>Math</b>: flashcards, answer written in digit boxes. <b>Puzzles</b>: multiple choice.</li>
+        <li><b>A bit of everything</b>: a mixed session drawn from all subjects with cards due.</li>
+        <li><b>Rewards</b> (bottom, yellow): opens the claw machine and shows how many tokens there are.</li>
+        <li>⚙️ Settings (top right) needs a <b>press and hold</b> (about 2 s); a plain tap says “Ask a grown-up.”</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Open questions</h2>
+      <ul>
+        <li>Hide subjects with nothing due, or show them with “all done” stars?</li>
+        <li>Should a subject session be shorter than an “everything” session?</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

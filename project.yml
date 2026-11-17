@@ -1,0 +1,49 @@
+# XcodeGen spec. Generate KidTutor.xcodeproj with `make project`; the project file itself isn't committed.
+name: KidTutor
+options:
+  deploymentTarget:
+    iOS: "18.0"
+  createIntermediateGroups: true
+  # The Xcode these settings were checked against. Older values make Xcode offer "recommended settings"
+  # changes on open; make those here instead, since Xcode's edits are lost when the project is regenerated.
+  xcodeVersion: "27.2"
+
+settings:
+  base:
+    DEVELOPMENT_TEAM: ${DEVELOPMENT_TEAM} # Apple Developer team, from Local.mk (not committed); targets inherit it
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    STRING_CATALOG_GENERATE_SYMBOLS: YES
+
+packages:
+  KidTutorKit:
+    path: Packages/KidTutorKit
+
+targets:
+  KidTutor:
+    type: application
+    platform: iOS
+    sources:
+      - path: App/KidTutor
+    dependencies:
+      - package: KidTutorKit
+        product: KidTutorKit
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: ${BUNDLE_ID} # from Local.mk (not committed); the Makefile has a default
+        PRODUCT_NAME: KidTutor
+        MARKETING_VERSION: 0.1.0
+        CURRENT_PROJECT_VERSION: 1
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "2" # iPad only
+        CODE_SIGN_STYLE: Automatic
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Kid Tutor
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+        # Show the app's Documents folder (samples.json) in the Files app.
+        INFOPLIST_KEY_UIFileSharingEnabled: YES
+        INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace: YES
+        # Reading: the child reads aloud; speech is recognized on the iPad only.
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: Kid Tutor listens while your child reads words out loud.
+        INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: Kid Tutor checks words your child reads out loud. Speech is recognized on this iPad and never sent anywhere.

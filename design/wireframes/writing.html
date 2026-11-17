@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing letters · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+<style>
+  /* The printed example the child copies: solid letter, no box border, a little apart from the boxes. */
+  .cell.model { border: calc(4 * var(--pt)) solid var(--color-line); margin-right: calc(36 * var(--pt)); font-family: "Andika", var(--font-child); }
+  .cell.trace { color: #d4d7dc; font-family: "Andika", var(--font-child); }
+  .cell.memory { border: calc(4 * var(--pt)) dashed var(--color-line); color: var(--color-muted); font-size: calc(70 * var(--pt)); margin-right: calc(36 * var(--pt)); }
+  .levels { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+  .levels h3 { margin: 0 0 0.4rem; font-size: 1rem; }
+  .levels p { margin: 0.4rem 0 0; color: var(--color-muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Writing: letters (level 2, copy)</h1>
+    <nav><a href="writing-words.html">Writing: words</a><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen">
+        <div class="topbar">
+          <a class="btn icon" href="#" aria-label="Say it again">🔊</a>
+          <div class="progress" aria-label="Question 2 of 6">
+            <span class="done"></span><span class="now"></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <a class="btn" href="#" aria-label="Help">💡 Help</a>
+        </div>
+        <div class="center">
+          <div class="letters" aria-label="Example a, then three boxes, the first written">
+            <div class="cell model">a</div>
+            <div class="cell blank written">a</div>
+            <div class="cell blank"></div>
+            <div class="cell blank"></div>
+          </div>
+          <span class="subtle">Write it three times</span>
+        </div>
+        <div class="row" style="justify-content: flex-end">
+          <a class="btn primary" href="writing-words.html">✓ Check</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="levels">
+      <div>
+        <h3>Level 1 · Trace</h3>
+        <div class="device"><div class="screen">
+          <div class="topbar"><a class="btn icon">🔊</a><div class="progress"><span class="now"></span><span></span><span></span><span></span><span></span><span></span></div><a class="btn">💡 Help</a></div>
+          <div class="center"><div class="letters">
+            <div class="cell model">a</div>
+            <div class="cell blank trace">a</div><div class="cell blank trace">a</div><div class="cell blank trace">a</div>
+          </div><span class="subtle">Trace it three times</span></div>
+          <div class="row" style="justify-content: flex-end"><a class="btn primary">✓ Check</a></div>
+        </div></div>
+        <p>A faded letter in every box. For new letters, and after a hard try.</p>
+      </div>
+      <div>
+        <h3>Level 3 · From memory</h3>
+        <div class="device"><div class="screen">
+          <div class="topbar"><a class="btn icon">🔊</a><div class="progress"><span class="done"></span><span class="done"></span><span class="now"></span><span></span><span></span><span></span></div><a class="btn">💡 Help</a></div>
+          <div class="center"><div class="letters">
+            <div class="cell memory">🔊</div>
+            <div class="cell blank"></div><div class="cell blank"></div><div class="cell blank"></div>
+          </div><span class="subtle">Write it three times</span></div>
+          <div class="row" style="justify-content: flex-end"><a class="btn primary">✓ Check</a></div>
+        </div></div>
+        <p>Nothing to copy: the letter is only spoken. Help shows the example again.</p>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="child-home.html">← Home</a><a href="writing-words.html">Next: Writing words →</a></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note says"><h2>Says</h2>
+      <p>Trace: “Trace a lowercase A, three times.”</p>
+      <p>Copy: “Write a lowercase A, three times.”</p>
+      <p>From memory: “Write a lowercase A, three times.” (nothing shown)</p>
+      <p>Done: “Beautiful! Three lowercase A’s.”</p>
+    </div>
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>The example sits <b>left</b> of the boxes so a right hand doesn’t cover it while writing.</li>
+        <li>Each box is read by the child’s own recognizer when the pencil pauses, like Spelling. Wrong: the box turns red and clears, “Almost! Try again.” Second miss: the letter appears faded to trace.</li>
+        <li>Help: on level 3 it shows the example; on level 2 it fades the letter into the next empty box.</li>
+        <li>Each letter has its own level. All three right first time, no help → up a level. Needed a trace → down a level. Two clean passes at level 3 → mastered.</li>
+        <li>6 items per session (about 18 letters to write). Lowercase first, by family: round letters (c a d g o q), tall straight (l t i j k), humps (r n m h b p), then the rest (e s f u v w x y z). Then numbers, then capitals by family (straight, slanted, curved, mixed).</li>
+        <li>Capitals start with no handwriting samples, so a traced or copied letter the recognizer can’t judge yet is saved as a sample (if it’s big enough not to be a scribble). Writing fills in calibration as it goes; the grown-up Calibrate tab stays as it is.</li>
+        <li>Every checked letter becomes a recognizer example, so Writing keeps improving Spelling and Math.</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Open questions</h2>
+      <ul>
+        <li>Later: a gentle tip when a letter floats above the baseline or tall letters don’t reach the top line (never counts as wrong).</li>
+        <li>Later: a “watch me” animation of the stroke order (needs stroke data drawn per letter).</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

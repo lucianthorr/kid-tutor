@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kid Tutor wireframes</title>
+<link rel="stylesheet" href="wireframe.css">
+<style>
+  main { max-width: 72rem; margin: 0 auto; padding: 1.5rem; display: grid; gap: 2rem; }
+  h1 { margin: 0; }
+  h2 { margin: 0 0 0.75rem; font-size: 1.1rem; }
+  p { margin: 0; max-width: 65ch; }
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+  .flow a { padding: 0.45rem 0.9rem; background: #fff; border: 2px solid var(--color-line); border-radius: 999px; color: var(--color-ink); text-decoration: none; font-weight: 600; }
+  .flow a:hover { border-color: var(--color-accent); }
+  .flow .arrow { color: var(--color-muted); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); gap: 1.25rem; }
+  .card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid var(--color-line); display: grid; color: inherit; text-decoration: none; }
+  .card:hover { border-color: var(--color-accent); }
+  .thumb { aspect-ratio: 1376 / 1032; overflow: hidden; position: relative; background: var(--color-surface); }
+  .thumb iframe { position: absolute; top: 0; left: 0; width: 400%; height: 400%; transform: scale(0.25); transform-origin: 0 0; border: 0; pointer-events: none; }
+  .card-body { padding: 0.8rem 1rem 1rem; display: grid; gap: 0.35rem; }
+  .card-title { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; font-weight: 700; }
+  .status { font-size: 0.75rem; font-weight: 600; padding: 0.1rem 0.55rem; border-radius: 999px; background: var(--color-surface); color: var(--color-muted); }
+  .status.ready { background: #dcf3e5; color: #1d6b3d; }
+  .status.built { background: #dbe9f8; color: #1f4f80; }
+  .card p { color: var(--color-muted); font-size: 0.95rem; }
+  .links { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .links a { color: var(--color-hint); }
+</style>
+</head>
+<body>
+<main>
+  <header style="display: grid; gap: 0.5rem">
+    <h1>Kid Tutor wireframes</h1>
+    <p>Low-fidelity sketches at 13-inch iPad size. Click a screen to open it, then use the links under each screen to walk the flow. Notes beside each screen say what the app speaks and how it behaves.</p>
+    <div class="links">
+      <a href="PRINCIPLES.md">Design principles</a>
+      <a href="README.md">How we work</a>
+      <a href="screenshots/">Simulator screenshots</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Session flow</h2>
+    <div class="flow">
+      <a href="wireframes/child-home.html">Home</a><span class="arrow">→</span>
+      <a href="wireframes/writing.html">Writing letters</a><span class="arrow">→</span>
+      <a href="wireframes/writing-words.html">Writing words</a><span class="arrow">→</span>
+      <a href="wireframes/spelling.html">Spelling</a><span class="arrow">→</span>
+      <a href="wireframes/vocab.html">Vocab</a><span class="arrow">→</span>
+      <a href="wireframes/puzzle-next.html">Puzzles</a><span class="arrow">→</span>
+      <span class="arrow">…</span><span class="arrow">→</span>
+      <a href="wireframes/celebration.html">Session done</a><span class="arrow">→</span>
+      <a href="wireframes/child-home.html">Home</a><span class="arrow">→</span>
+      <a href="wireframes/rewards.html">Rewards</a><span class="arrow">→</span>
+      <a href="wireframes/toy-chest.html">Toy chest</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Screens</h2>
+    <div class="cards">
+      <a class="card" href="wireframes/child-home.html">
+        <div class="thumb"><iframe src="wireframes/child-home.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Child home <span class="status">Draft</span></div><p>Six subject tiles (including a mixed “bit of everything”), settings gear top right.</p></div>
+      </a>
+      <a class="card" href="wireframes/writing.html">
+        <div class="thumb"><iframe src="wireframes/writing.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Writing: letters <span class="status built">Built</span></div><p>Copy a letter three times: trace, then copy, then from memory.</p></div>
+      </a>
+      <a class="card" href="wireframes/writing-words.html">
+        <div class="thumb"><iframe src="wireframes/writing-words.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Writing: words <span class="status built">Built</span></div><p>Copy a shown word letter by letter; later look, cover, write.</p></div>
+      </a>
+      <a class="card" href="wireframes/spelling.html">
+        <div class="thumb"><iframe src="wireframes/spelling.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Spelling <span class="status built">Built</span></div><p>The word with missing letters; the child writes in the yellow boxes.</p></div>
+      </a>
+      <a class="card" href="wireframes/reading.html">
+        <div class="thumb"><iframe src="wireframes/reading.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Reading <span class="status built">Built</span></div><p>Read a word aloud; on-device speech recognition checks it.</p></div>
+      </a>
+      <a class="card" href="wireframes/math.html">
+        <div class="thumb"><iframe src="wireframes/math.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Math <span class="status built">Built</span></div><p>A number fact; the answer is written in digit boxes, with counting dots as help.</p></div>
+      </a>
+      <a class="card" href="wireframes/vocab.html">
+        <div class="thumb"><iframe src="wireframes/vocab.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Vocab <span class="status">Draft</span></div><p>Hear a word, tap pictures to hear their meanings, pick one.</p></div>
+      </a>
+      <a class="card" href="wireframes/puzzle-next.html">
+        <div class="thumb"><iframe src="wireframes/puzzle-next.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Puzzles: what comes next? <span class="status built">Built</span></div><p>A row with a gap at the end; tap the tile that continues the pattern.</p></div>
+      </a>
+      <a class="card" href="wireframes/puzzle-odd.html">
+        <div class="thumb"><iframe src="wireframes/puzzle-odd.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Puzzles: odd one out <span class="status built">Built</span></div><p>Four tiles, three go together; tap the one that doesn't belong.</p></div>
+      </a>
+      <a class="card" href="wireframes/puzzle-grid.html">
+        <div class="thumb"><iframe src="wireframes/puzzle-grid.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Puzzles: finish the grid <span class="status built">Built</span></div><p>Rows and columns each follow a rule; tap the tile that fills the gap.</p></div>
+      </a>
+      <a class="card" href="wireframes/puzzle-who.html">
+        <div class="thumb"><iframe src="wireframes/puzzle-who.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Puzzles: who am I? <span class="status built">Built</span></div><p>Spoken clues, shown as picture chips; tap the only tile that fits them all.</p></div>
+      </a>
+      <a class="card" href="wireframes/celebration.html">
+        <div class="thumb"><iframe src="wireframes/celebration.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Session done <span class="status">Draft</span></div><p>Specific praise, a new sticker, and milestone progress.</p></div>
+      </a>
+      <a class="card" href="wireframes/rewards.html">
+        <div class="thumb"><iframe src="wireframes/rewards.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Rewards: claw machine <span class="status built">Built</span></div><p>Spend a token, aim the claw, drop on a pile of squishy toys. Off-center grabs slip out; misses improve the grip.</p></div>
+      </a>
+      <a class="card" href="wireframes/toy-chest.html">
+        <div class="thumb"><iframe src="wireframes/toy-chest.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Toy chest <span class="status built">Built</span></div><p>Shelves of won toys; tap one to hear its name.</p></div>
+      </a>
+      <a class="card" href="wireframes/progress.html">
+        <div class="thumb"><iframe src="wireframes/progress.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Progress <span class="status built">Built</span></div><p>In Settings: each subject's deck, with how many cards are learned, in progress and to do.</p></div>
+      </a>
+      <a class="card" href="wireframes/parent-dashboard.html">
+        <div class="thumb"><iframe src="wireframes/parent-dashboard.html" title="" tabindex="-1"></iframe></div>
+        <div class="card-body"><div class="card-title">Parent dashboard <span class="status">Draft</span></div><p>This week's practice, what needs attention, and rewards.</p></div>
+      </a>
+    </div>
+  </section>
+</main>
+</body>
+</html>

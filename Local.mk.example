@@ -1,0 +1,8 @@
+# Copy to Local.mk (which git ignores) and fill in. `make project` reads it.
+# Your Apple Developer team ID: Xcode › Settings › Accounts, or developer.apple.com › Membership.
+# Only needed to build for a real iPad; the Simulator runs without it.
+DEVELOPMENT_TEAM := XXXXXXXXXX
+
+# The app's bundle id, unique to you (reverse domain, like com.yourname.kidtutor). The app's data on the
+# iPad belongs to this id: changing it later installs a separate, empty app.
+BUNDLE_ID := com.example.kidtutor

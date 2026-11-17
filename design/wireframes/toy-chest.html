@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toy chest · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+<style>
+  .shelves { flex: 1; display: grid; grid-template-rows: repeat(3, 1fr); gap: calc(16 * var(--pt)); }
+  .shelf { display: flex; align-items: flex-end; gap: calc(36 * var(--pt)); padding: 0 calc(40 * var(--pt)); border-bottom: calc(18 * var(--pt)) solid #b07a45; }
+  .toy { font-size: calc(110 * var(--pt)); line-height: 1; position: relative; }
+  .toy small { position: absolute; right: calc(-10 * var(--pt)); top: 0; font-size: calc(26 * var(--pt)); background: var(--color-accent); border-radius: 999px; padding: 0 calc(10 * var(--pt)); }
+  .empty { width: calc(110 * var(--pt)); height: calc(110 * var(--pt)); border: calc(3 * var(--pt)) dashed var(--color-line); border-radius: 50%; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Toy chest</h1>
+    <nav><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen">
+        <div class="topbar">
+          <a class="btn icon" href="rewards.html" aria-label="Back to the claw machine">◀</a>
+          <p class="prompt">Your toys</p>
+          <a class="btn icon" href="#" aria-label="Say it again">🔊</a>
+        </div>
+        <div class="shelves">
+          <div class="shelf"><span class="toy">🐻</span><span class="toy">🐰<small>2</small></span><span class="toy">🦊</span><span class="toy">🐸</span></div>
+          <div class="shelf"><span class="empty"></span><span class="empty"></span><span class="empty"></span><span class="empty"></span></div>
+          <div class="shelf"><span class="empty"></span><span class="empty"></span><span class="empty"></span><span class="empty"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="rewards.html">← Claw machine</a><a href="child-home.html">Home →</a></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note says"><h2>Says</h2>
+      <p>On appear: “Here are your toys! You have 4.” (none yet: “Your toy chest is empty. Win toys in the claw machine!”)</p>
+      <p>Tap a toy: its name (“Bunny!”).</p>
+    </div>
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>Shelves of won toys, in the order they were won; a number badge when there's more than one.</li>
+        <li>Empty dashed spots show how many toys are still in the machine, so the set feels collectible.</li>
+        <li>Nothing here can be lost or taken away.</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Later</h2>
+      <ul><li>Drag toys around to arrange the shelves.</li></ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

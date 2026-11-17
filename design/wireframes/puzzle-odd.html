@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puzzles: odd one out · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+<style>
+  .four { display: flex; gap: calc(48 * var(--pt)); justify-content: center; }
+  .four .slot { --slot: 250; }
+  .four .shape { --size: 150; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Puzzles: odd one out</h1>
+    <nav><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen">
+        <div class="topbar">
+          <a class="btn icon" href="#" aria-label="Say it again">🔊</a>
+          <div class="progress" aria-label="Puzzle 3 of 6">
+            <span class="done"></span><span class="done"></span><span class="now"></span>
+            <span></span><span></span><span></span>
+          </div>
+          <a class="btn" href="#" aria-label="Help">💡 Help</a>
+        </div>
+        <p class="prompt">Which one doesn't belong?</p>
+        <div class="center">
+          <div class="four">
+            <a class="slot" href="#" aria-label="red circle"><span class="shape circle red"></span></a>
+            <a class="slot" href="#" aria-label="blue circle"><span class="shape circle blue"></span></a>
+            <a class="slot selected" href="#" aria-label="green triangle"><span class="shape triangle green"></span></a>
+            <a class="slot" href="#" aria-label="yellow circle"><span class="shape circle yellow"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="puzzle-next.html">← What comes next?</a><a href="puzzle-grid.html">Next: Finish the grid →</a></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note says"><h2>Says</h2>
+      <p>On appear: “Three of these go together. Which one doesn't belong?”</p>
+      <p>Tap a tile: that's the answer. There is no Check button: every puzzle has one answer, so the right or wrong reply comes straight away, and it names the tile.</p>
+      <p>Right: “Yes! The others are all circles. The triangle doesn't belong.”</p>
+      <p>Wrong: “Hmm, the blue circle is a circle like the red one. Try another.” and it fades.</p>
+      <p>Help: “Look at the shapes.” (it names what to compare, not the answer.) Again: “Three of them are circles.”</p>
+    </div>
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>Four big tiles; tapping one answers (no Check button).</li>
+        <li><b>Exactly one answer, checked by tests:</b> the other three share something the odd tile doesn't (here, being a circle). Every other feature is either the same on all four tiles or different on all four (here, color), so no second answer can sneak in.</li>
+        <li><b>Levels:</b> one obvious difference with everything else the same (three red circles and a red square) → shown here: the other things vary too → size as the difference (big vs small, all one shape: four stars with one small, since a small square among a big circle, triangle and star just looks like another different tile) → any of the three.</li>
+        <li><b>A wrong pick shows why:</b> the three that go together light up in blue for two seconds, as the app says what they share.</li>
+        <li>Each Help press says a hint and takes away a wrong choice.</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Later</h2>
+      <ul>
+        <li>Groups of things (🐶 🐱 🐰 🍌), using the claw-machine animals plus a picked list of food, vehicles and clothes.</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

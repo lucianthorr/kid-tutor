@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Progress · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+<style>
+  .form { display: grid; gap: calc(12 * var(--pt)); font-size: calc(var(--text-body) * var(--pt)); }
+  .form h4 { margin: calc(8 * var(--pt)) 0 0; color: var(--color-muted); font-size: calc(var(--text-caption) * var(--pt)); text-transform: uppercase; letter-spacing: 0.04em; }
+  .group { border-radius: calc(14 * var(--pt)); background: var(--color-surface); }
+  .row { display: grid; grid-template-columns: calc(220 * var(--pt)) 1fr auto; align-items: center; gap: calc(20 * var(--pt)); padding: calc(14 * var(--pt)) calc(20 * var(--pt)); border-top: 1px solid var(--color-line); }
+  .row:first-child { border-top: 0; }
+  .row .chev { color: var(--color-muted); }
+  .bar { display: flex; height: calc(14 * var(--pt)); border-radius: 999px; overflow: hidden; background: #e7e7ea; }
+  .bar.big { height: calc(28 * var(--pt)); }
+  .learned { background: #3f9b5a; }
+  .doing { background: #f0a43a; }
+  .counts { color: var(--color-muted); font-size: calc(var(--text-caption) * var(--pt)); }
+  .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: calc(16 * var(--pt)); }
+  .tile { border-radius: calc(14 * var(--pt)); background: var(--color-surface); padding: calc(14 * var(--pt)) calc(18 * var(--pt)); }
+  .tile b { display: block; font-size: calc(40 * var(--pt)); font-variant-numeric: tabular-nums; }
+  .dot { display: inline-block; width: calc(14 * var(--pt)); height: calc(14 * var(--pt)); border-radius: 50%; margin-right: calc(6 * var(--pt)); }
+  .seg { display: inline-flex; border-radius: calc(10 * var(--pt)); background: #e7e7ea; padding: calc(3 * var(--pt)); align-self: center; }
+  .seg span { padding: calc(6 * var(--pt)) calc(26 * var(--pt)); border-radius: calc(8 * var(--pt)); }
+  .seg .on { background: white; font-weight: 600; }
+  .items .row { grid-template-columns: calc(200 * var(--pt)) 1fr auto; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Progress (in Settings)</h1>
+    <nav><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen grown-up">
+        <div class="topbar"><span></span><strong>Settings</strong><span></span></div>
+        <div class="form">
+          <h4>Progress</h4>
+          <div class="group">
+            <div class="row"><span>📖 Reading</span><div><div class="bar"><div class="learned" style="width: 12%"></div><div class="doing" style="width: 5%"></div></div><div class="counts">18 learned · 8 in progress · 124 to do</div></div><span class="chev">›</span></div>
+            <div class="row"><span>✏️ Writing</span><div><div class="bar"><div class="learned" style="width: 20%"></div><div class="doing" style="width: 8%"></div></div><div class="counts">17 learned · 6 in progress · 62 to do</div></div><span class="chev">›</span></div>
+            <div class="row"><span>🔤 Spelling</span><div><div class="bar"><div class="learned" style="width: 7%"></div><div class="doing" style="width: 5%"></div></div><div class="counts">9 learned · 6 in progress · 108 to do</div></div><span class="chev">›</span></div>
+            <div class="row"><span>➕ Math</span><div><div class="bar"><div class="learned" style="width: 15%"></div><div class="doing" style="width: 9%"></div></div><div class="counts">36 learned · 21 in progress · 178 to do</div></div><span class="chev">›</span></div>
+            <div class="row"><span>🧩 Puzzles</span><div class="counts">Levels: what comes next 3/5 · odd one out 2/4 · grid 1/5 · who am I 2/4</div><span class="chev">›</span></div>
+          </div>
+          <h4>Characters</h4>
+          <div class="group"><div class="row"><span>Lowercase letters</span><span></span><span>On</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="device" style="margin-top: 1.5rem">
+      <div class="screen grown-up">
+        <div class="topbar"><span>‹ Settings</span><strong>Spelling</strong><span></span></div>
+        <div class="tiles">
+          <div class="tile">In the deck<b>123</b></div>
+          <div class="tile"><span class="dot learned"></span>Learned<b>9</b></div>
+          <div class="tile"><span class="dot doing"></span>In progress<b>6</b></div>
+          <div class="tile"><span class="dot" style="background:#c9c9cf"></span>To do<b>108</b></div>
+        </div>
+        <div class="bar big"><div class="learned" style="width: 7%"></div><div class="doing" style="width: 5%"></div></div>
+        <div class="seg"><span class="on">In progress (6)</span><span>Learned (9)</span><span>To do (108)</span></div>
+        <div class="form items">
+          <div class="group">
+            <div class="row"><b>because</b><span class="counts">Level 2 of 7 · 6 tries · often misses: a, u</span><span class="counts">2 days ago</span></div>
+            <div class="row"><b>friend</b><span class="counts">Level 3 of 6 · 4 tries · often misses: i</span><span class="counts">2 days ago</span></div>
+            <div class="row"><b>said</b><span class="counts">Level 4 of 4 (whole word) · 1 of 2 passes · 5 tries</span><span class="counts">yesterday</span></div>
+            <div class="row"><b>was</b><span class="counts">Level 2 of 3 · 3 tries</span><span class="counts">today</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="parent-dashboard.html">← Parent dashboard</a><span></span></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>A <b>Progress</b> section at the top of Settings lists each subject with a bar and its counts. Tapping one opens that subject's page.</li>
+        <li><b>The deck and its three piles, like Anki:</b> <i>to do</i> = never practiced (Anki's "new"), <i>in progress</i> = practiced but not learned yet ("learning"), <i>learned</i> = mastered ("mature").</li>
+        <li><b>Learned means:</b> Reading and Math, three first-try answers more than hints (box 3 of 5); Spelling and Writing, two first tries in a row at the top level (whole word from memory, letter from memory). A hint takes "learned" away again.</li>
+        <li><b>Subject page:</b> four numbers, the bar, then a picker for the three piles. <i>In progress</i> opens first, hardest first (lowest level, most tries), with what's often missed. <i>To do</i> is in teaching order, so it shows what comes next.</li>
+        <li><b>Decks:</b> Reading 150 cards (words and sentences); Spelling 123 words; Writing 185: the 62 characters and the 123 spelling words, which join once 8 lowercase letters are written from memory (shown in groups: lowercase, numbers, capitals, words); Math every fact, grouped by skill (adding to 5, … taking away within 20).</li>
+        <li><b>Puzzles</b> have no deck (each puzzle is made fresh), so their page shows each kind's level, puzzles solved and the current streak instead.</li>
+        <li><b>Reset:</b> each subject page ends with "Reset Spelling progress"; the Progress section ends with "Reset all progress". Both ask first, keep tokens and won toys, and copy the old file to Progress › Backups.</li>
+        <li><b>Grown-up tabs:</b> Settings, Test, Results, Calibrate. The portal opens on Settings, or on Calibrate while handwriting still needs samples.</li>
+        <li>Normal iPad list UI, since this is a grown-up screen inside Settings.</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Open questions</h2>
+      <ul>
+        <li>Anki also shows "due today". The app's scheduler doesn't use due dates yet (FSRS comes later), so there's no due count. Add it then?</li>
+        <li>Reset or mark learned a single card, too?</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

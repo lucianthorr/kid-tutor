@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing words · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+<style>
+  .model-word { font-family: "Andika", var(--font-child); font-size: calc(110 * var(--pt)); line-height: 1; padding: calc(12 * var(--pt)) calc(48 * var(--pt)); border: calc(4 * var(--pt)) solid var(--color-line); border-radius: calc(20 * var(--pt)); }
+  .cover { font-size: calc(var(--text-title) * var(--pt)); color: var(--color-muted); padding: calc(28 * var(--pt)) calc(56 * var(--pt)); background: var(--color-surface); border: calc(4 * var(--pt)) dashed var(--color-line); border-radius: calc(20 * var(--pt)); }
+  .cell.trace { color: #d4d7dc; font-family: "Andika", var(--font-child); }
+  .levels { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+  .levels h3 { margin: 0 0 0.4rem; font-size: 1rem; }
+  .levels p { margin: 0.4rem 0 0; color: var(--color-muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Writing: words (level 2, copy)</h1>
+    <nav><a href="writing.html">Writing: letters</a><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen">
+        <div class="topbar">
+          <a class="btn icon" href="#" aria-label="Say it again">🔊</a>
+          <div class="progress" aria-label="Question 5 of 6">
+            <span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span>
+            <span class="now"></span><span></span>
+          </div>
+          <a class="btn" href="#" aria-label="Help">💡 Help</a>
+        </div>
+        <div class="center">
+          <div class="model-word">cat</div>
+          <div class="letters" aria-label="Three boxes, c written">
+            <div class="cell blank written">c</div>
+            <div class="cell blank"></div>
+            <div class="cell blank"></div>
+          </div>
+          <span class="subtle">Copy the word</span>
+        </div>
+        <div class="row" style="justify-content: flex-end">
+          <a class="btn primary" href="celebration.html">✓ Check</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="levels">
+      <div>
+        <h3>Level 1 · Trace</h3>
+        <div class="device"><div class="screen">
+          <div class="topbar"><a class="btn icon">🔊</a><div class="progress"><span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span><span></span></div><a class="btn">💡 Help</a></div>
+          <div class="center">
+            <div class="model-word">cat</div>
+            <div class="letters"><div class="cell blank trace">c</div><div class="cell blank trace">a</div><div class="cell blank trace">t</div></div>
+            <span class="subtle">Trace the word</span>
+          </div>
+          <div class="row" style="justify-content: flex-end"><a class="btn primary">✓ Check</a></div>
+        </div></div>
+        <p>Each letter faded in its box.</p>
+      </div>
+      <div>
+        <h3>Level 3 · Look, cover, write</h3>
+        <div class="device"><div class="screen">
+          <div class="topbar"><a class="btn icon">🔊</a><div class="progress"><span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span><span></span></div><a class="btn">💡 Peek</a></div>
+          <div class="center">
+            <div class="cover">🙈 hidden</div>
+            <div class="letters"><div class="cell blank" style="width: calc(400 * var(--pt))"></div></div>
+            <span class="subtle">Write the word you saw</span>
+          </div>
+          <div class="row" style="justify-content: flex-end"><a class="btn primary">✓ Check</a></div>
+        </div></div>
+        <p>The word shows for a few seconds while it’s read aloud, then hides. The child writes the whole word in one wide box. Help peeks again.</p>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="writing.html">← Writing letters</a><a href="celebration.html">Next: Session done →</a></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note says"><h2>Says</h2>
+      <p>Trace / copy: “Write the word cat.”</p>
+      <p>Look, cover, write: “Look at this word: cat.” … (hides) “Now write cat.”</p>
+      <p>Done: “Yes! C, A, T. Cat!”</p>
+    </div>
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>How Writing differs from Spelling: here the word is <b>shown</b>, because the goal is neat letters, not remembering the spelling. Level 3 (“look, cover, write”, a common school routine) is the bridge to Spelling.</li>
+        <li>Levels 1–2: one box per letter, checked like Spelling: red and clear on a miss, faded letter after a second miss.</li>
+        <li>Level 3: one wide box for the whole word. The app splits the ink into letters where strokes don’t overlap and checks each with the child’s recognizer; if that fails, Apple’s on-device text reader gets a second look. A miss clears the box; a second miss shows the word faded to trace.</li>
+        <li>Levels and mastery work like letters: clean pass up, needed a trace down, two clean passes at level 3 mastered.</li>
+        <li>Words join a session once about 8 letters reach level 3, and only words whose letters have all been practiced. Then a session is roughly 3 letters and 3 words.</li>
+        <li>Word list: the same starter words as Spelling (cat, dog, sun, … because), shortest first.</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Open questions</h2>
+      <ul>
+        <li>Does the wide box check well enough with real Pencil writing? Letters written touching each other can’t be split.</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

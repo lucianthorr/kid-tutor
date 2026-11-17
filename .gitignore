@@ -1,0 +1,57 @@
+# macOS
+.DS_Store
+
+# Xcode. The project is generated from project.yml (`make project`), so it's never committed.
+KidTutor.xcodeproj/
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+*.xcarchive
+*.ipa
+*.dSYM/
+*.dSYM.zip
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Nix
+result
+result-*
+.direnv/
+
+# Machine-specific settings, such as the Apple signing team (see Local.mk.example)
+Local.mk
+*.local.xcconfig
+.env
+.env.*
+
+# Signing material: never commit certificates, keys or provisioning profiles.
+*.p12
+*.cer
+*.certSigningRequest
+*.mobileprovision
+*.provisionprofile
+*.pem
+*.key
+
+# The child's data. Handwriting samples, progress, logs and recordings copied off the iPad, export
+# folders made from them, and models trained on them stay on this machine.
+samples*.json
+Progress/
+Logs/
+*.log
+*.wav
+*.m4a
+*.caf
+kid-tutor-training/
+*.mlmodel
+*.mlpackage/
+*.mlmodelc/
+*.mlproj/
+
+# Editors and tools
+.vscode/
+.idea/
+.claude/settings.local.json

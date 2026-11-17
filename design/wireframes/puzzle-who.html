@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Puzzles: who am I · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+<style>
+  .clues { display: flex; gap: calc(24 * var(--pt)); justify-content: center; }
+  .clue { position: relative; display: flex; align-items: center; gap: calc(14 * var(--pt)); min-height: calc(96 * var(--pt)); padding: 0 calc(26 * var(--pt)); border: calc(3 * var(--pt)) solid var(--color-line); border-radius: 999px; background: var(--color-paper); text-decoration: none; color: var(--color-ink); font-size: calc(var(--text-title) * var(--pt)); font-weight: 700; }
+  .clue.now { border-color: var(--color-hint); border-width: calc(6 * var(--pt)); }
+  .clue .shape { --size: 56; }
+  .clue .shape.outline { background: none; border: calc(6 * var(--pt)) solid var(--color-ink); }
+  .clue .no { position: relative; display: grid; place-items: center; }
+  .clue .no::before { content: ""; position: absolute; width: calc(84 * var(--pt)); aspect-ratio: 1; border-radius: 50%; border: calc(7 * var(--pt)) solid var(--color-ink); box-sizing: border-box; }
+  .clue .no::after { content: ""; position: absolute; width: calc(80 * var(--pt)); height: calc(7 * var(--pt)); background: var(--color-ink); box-shadow: 0 0 0 calc(3 * var(--pt)) var(--color-paper); transform: rotate(-45deg); border-radius: 999px; }
+  .clue .pair { display: flex; align-items: flex-end; gap: calc(8 * var(--pt)); }
+  .clue .pair .small { --size: 28; opacity: 0.35; }
+  .clue .drop { display: block; width: calc(46 * var(--pt)); height: calc(46 * var(--pt)); background: #e0533d; border-radius: 0 50% 50% 50%; transform: rotate(45deg); }
+  .clue .shape.striped { background: #9aa0a6; }
+  .clue { margin-bottom: calc(34 * var(--pt)); }
+  .clue .words { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: calc(6 * var(--pt)); font-size: calc(22 * var(--pt)); font-weight: 600; color: var(--color-muted); white-space: nowrap; }
+  .clue .animal { font-size: calc(50 * var(--pt)); line-height: 1; }
+  .six { display: grid; grid-template-columns: repeat(3, auto); gap: calc(28 * var(--pt)); justify-content: center; }
+  .six .slot { --slot: 200; }
+  .six .shape.big { --size: 130; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Puzzles: who am I?</h1>
+    <nav><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen">
+        <div class="topbar">
+          <a class="btn icon" href="#" aria-label="Say it again">🔊</a>
+          <div class="progress" aria-label="Puzzle 5 of 6">
+            <span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span>
+            <span></span>
+          </div>
+          <a class="btn" href="#" aria-label="Help">💡 Help</a>
+        </div>
+        <p class="prompt">Who am I?</p>
+        <div class="clues">
+          <a class="clue" href="#" aria-label="Clue: I'm not red"><span class="no"><span class="drop"></span></span><span class="words">not red</span></a>
+          <a class="clue" href="#" aria-label="Clue: I'm not a circle"><span class="no"><span class="shape circle striped"></span></span><span class="words">not a circle</span></a>
+          <a class="clue now" href="#" aria-label="Clue: I'm big"><span class="animal">🐘</span><span class="words">big</span></a>
+        </div>
+        <div class="center">
+          <div class="six">
+            <a class="slot" href="#" aria-label="big red square"><span class="shape square red big"></span></a>
+            <a class="slot" href="#" aria-label="small blue square"><span class="shape square blue small"></span></a>
+            <a class="slot" href="#" aria-label="big blue circle"><span class="shape circle blue big"></span></a>
+            <a class="slot" href="#" aria-label="big blue square"><span class="shape square blue big"></span></a>
+            <a class="slot" href="#" aria-label="small green triangle"><span class="shape triangle green small"></span></a>
+            <a class="slot" href="#" aria-label="big red circle"><span class="shape circle red big"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="puzzle-grid.html">← Finish the grid</a><a href="celebration.html">Next: Session done →</a></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note says"><h2>Says</h2>
+      <p>On appear: “Listen to my clues and find me! I'm not red. … I'm not a circle. … I'm big. Who am I?”</p>
+      <p>Tap a clue: that clue again (“I'm not a circle.”).</p>
+      <p>Tap a tile: that's the answer. There is no Check button: every puzzle has one answer, so the right or wrong reply comes straight away, and it names the tile.</p>
+      <p>Right: “You found me! Not red, not a circle, and big. The big blue square!”</p>
+      <p>Wrong: “The small blue square isn't red and isn't a circle… but I'm big!” (checks each clue against their pick.)</p>
+      <p>Help: “Listen again. I'm not red. I'm not a circle. I'm big.” and a wrong tile is taken away.</p>
+    </div>
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>Each clue is said aloud and shown as a picture chip that can't be mistaken for a tile: a paint drop for a color, the shape in gray (no tile is gray) for a shape, 🐭 or 🐘 for small or big; a dark “no” sign over it for “not”. The clue's words (“not red”, “a star”, “small”) sit under each chip, so a grown-up can follow without the sound, so a non-reader can look back at them. The chip being spoken is outlined in blue.</li>
+        <li><b>A wrong pick shows why:</b> the clue it breaks turns orange and wiggles, and every tile that clue rules out fades (at any level).</li>
+        <li><b>Nothing fades by itself.</b> (An earlier version faded tiles as each clue was said; at the easy level that solved the puzzle within seconds of waiting.) The child keeps the clues in mind, with the chips to look back at and tap to hear again.</li>
+        <li><b>Exactly one answer:</b> every wrong tile breaks exactly one clue, so each clue rules something out and only one tile fits them all. A test checks this for every level.</li>
+        <li><b>Levels:</b> 4 tiles, 2 clues → 6 tiles, 3 clues (shown) → 8 tiles → 8 tiles, and size can be a “not” too (“I'm not small”). At least one clue always says what it is, never three “not”s.</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Open questions</h2>
+      <ul>
+        <li>At higher levels, should the child be able to tap-and-hold a tile to cross it out themselves?</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>

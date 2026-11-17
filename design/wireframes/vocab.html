@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vocab · Kid Tutor wireframes</title>
+<link rel="stylesheet" href="../wireframe.css">
+<script src="../wireframe.js"></script>
+</head>
+<body>
+<div class="page">
+  <header class="page-header">
+    <h1>Vocab: pick the picture</h1>
+    <nav><a href="../index.html">All screens</a></nav>
+  </header>
+
+  <main>
+    <div class="device">
+      <div class="screen">
+        <div class="topbar">
+          <a class="btn icon" href="#" aria-label="Say it again">🔊</a>
+          <div class="progress" aria-label="Question 4 of 8">
+            <span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <a class="btn" href="#" aria-label="Help">💡 Help</a>
+        </div>
+        <p class="prompt">Which one is a <u>ladder</u>?</p>
+        <div class="choices">
+          <a class="picture" href="#"><div class="placeholder">🔊</div>photo</a>
+          <a class="picture selected" href="#"><div class="placeholder">🔊</div>photo</a>
+          <a class="picture" href="#"><div class="placeholder">🔊</div>pictogram</a>
+          <a class="picture" href="#"><div class="placeholder">🔊</div>photo</a>
+        </div>
+        <div class="row" style="justify-content: flex-end">
+          <a class="btn primary" href="celebration.html">✓ This one!</a>
+        </div>
+      </div>
+    </div>
+    <div class="flow-nav"><a href="spelling.html">← Spelling</a><a href="celebration.html">Next: Session done →</a></div>
+  </main>
+
+  <aside class="notes">
+    <div class="note says"><h2>Says</h2>
+      <p>On appear: “Which one is a ladder? Tap a picture to hear about it.”</p>
+      <p>Tap a picture: “Something with steps you climb to reach high places.”</p>
+    </div>
+    <div class="note behavior"><h2>Behavior</h2>
+      <ul>
+        <li>First tap selects a picture and reads its definition; “This one!” confirms.</li>
+        <li>Wrong choices come from words the child already knows well.</li>
+        <li>Wrong answer: that card fades and says what it actually is; child tries again.</li>
+        <li>Pictures: parent's own photos first, ARASAAC pictograms otherwise.</li>
+      </ul>
+    </div>
+    <div class="note question"><h2>Open questions</h2>
+      <ul>
+        <li>Four choices or three for younger kids?</li>
+        <li>Show the word in text at all?</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>
